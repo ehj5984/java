@@ -1,0 +1,57 @@
+import java.util.Arrays;
+import java.util.Random;
+
+//import java.util.Arrays;
+//
+//public class Warming6 {
+//public static void main(String[] args) {
+//	int a[]= {7,21,8,43,3,5};
+//	
+//	int i = 0, j=0, tmp=0;
+////	int number2 [] = a;
+//	
+//	for (i=0; i<a.length; i++) {           // i<a.length -1 
+//		for (j = i+1; j<a.length; j++) {  // j<a.length-i 로 해야 쓸데없는 연산 빠짐
+//			if (a[i]> a[j]) {
+//			
+//			tmp = a[i];
+//			a[i] = a[j];
+//			a[j]=tmp;
+//		}
+//			
+//	}
+//}System.out.println(Arrays.toString(a));
+//}
+//}
+
+public class Warming6 {
+public static void main(String[] args) {
+	
+	int number [] = new int [8]; 
+	Random r = new Random();
+	
+	
+	int i = 0, j=0, tmp=0;
+	
+	number [i] = r.nextInt();
+	
+	int ls[] = number;
+	
+for ( i = 0; i < ls.length; i++) {
+	
+	for ( j = i+1 ; j<ls.length-i ; j++)
+		
+		if (ls[i]<ls[j]) {
+			
+			tmp = ls[i];
+			ls[i] = ls[j];
+			ls[j]=tmp;
+			
+}
+
+System.out.println(Arrays.toString(ls)); 
+
+
+}
+}
+}

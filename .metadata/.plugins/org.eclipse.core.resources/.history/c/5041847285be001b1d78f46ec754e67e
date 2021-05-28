@@ -1,0 +1,43 @@
+package com.kopo.project0527;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import org.sqlite.SQLiteConfig;
+
+public class UserDB {
+	public String selectData() {
+		String resultString = "";
+		try {
+			// open
+			Class.forName("org.sqlite.JDBC");
+			SQLiteConfig config = new SQLiteConfig();
+			Connection connection = DriverManager.getConnection("jdbc:sqlite:/" + "c:/tomcat/personnel.db",
+					config.toProperties());
+
+			String query = "SELECT * FROM personnel";
+			PreparedStatement preparedStatement = connection.prepareStatement(query);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				int idx = resultSet.getInt("idx");
+				String name = resultSet.getString("name");
+				String gender = resultSet.getString("gender");
+				String address = resultSet.getString("address");
+				String depart = resultSet.getString("depart");
+				resultString = resultString + "<tr>";
+				resultString = resultString + "<td>" + idx + "</td><td>" + name + "</td><td>" + gender
+						+ "</td><td>" + address + "</td><td>" + depart + "</td><td><a href='update?idx=" + idx
+						+ "'>수정하기</a></td>";
+				resultString = resultString + "</tr>";
+			}
+			preparedStatement.close();
+
+			// close
+			connection.close();
+		} catch (Exception e) {
+		}
+		return resultString;
+	}
+}

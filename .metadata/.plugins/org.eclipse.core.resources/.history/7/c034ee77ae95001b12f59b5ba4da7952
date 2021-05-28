@@ -1,0 +1,22 @@
+import java.util.Arrays;
+
+public class Warming6 {
+public static void main(String[] args) {
+	int a[]= {7,21,8,43,3,5};
+	
+	int i = 0, j=0, tmp=0;
+//	int number2 [] = a;
+	
+	for (i=0; i<a.length; i++) {
+		for (j = i+1; j<a.length; j++) {
+			if (a[i]> a[j]) {
+			
+			tmp = a[i];
+			a[i] = a[j];
+			a[j]=tmp;
+		}
+			
+	}
+}System.out.println(Arrays.toString(a));
+}
+}
