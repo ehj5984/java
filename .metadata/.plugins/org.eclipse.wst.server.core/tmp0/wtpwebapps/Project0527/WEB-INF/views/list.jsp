@@ -14,14 +14,14 @@
         <table>
             <thead>
                 <tr>
-                    <th>idx</th><th>이름</th><th>성별</th><th>주소</th><th>소속부서</th>
+                   <th>idx</th><th>이름</th><th>성별</th><th>주소</th><th>소속부서</th>
                 </tr>
             </thead>
             <tbody>
             	${list }
             </tbody>
         </table>
-        <a href = "/project0527" style = "margin-top: 50px;"> 메인으로 </a>
+        <a href = "/projectㅁ" style = "margin-top: 50px;"> 메인으로 </a>
     </section>
 </body>
 </html>

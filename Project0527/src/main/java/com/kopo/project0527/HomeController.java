@@ -23,13 +23,7 @@ public class HomeController {
 		return "main";
 	}
 
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String listMethod(Locale locale, Model model) {
-		UserDB db = new UserDB();
-		String htmlString = db.selectData();
-		model.addAttribute("list", htmlString);
-		return "list";
-	}
+
 
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public String insertMethod(Locale locale, Model model) {
@@ -83,5 +77,13 @@ public class HomeController {
 		db.createTable();
 		model.addAttribute("m1", "테이블이 생성되었습니다.");
 		return "message";
+	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String listMethod(Locale locale, Model model) {
+		UserDB db = new UserDB();
+		String htmlString = db.selectData();
+		model.addAttribute("list", htmlString);
+		return "list";
 	}
 }
