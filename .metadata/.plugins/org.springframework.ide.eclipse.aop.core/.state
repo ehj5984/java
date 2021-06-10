@@ -8,4 +8,5 @@
 <aop-project name="project0518"/>
 <aop-project name="Student100"/>
 <aop-project name="Project500"/>
+<aop-project name="LogIn"/>
 </aop-reference-model>
