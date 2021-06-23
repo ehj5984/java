@@ -19,4 +19,6 @@
     <fullyQualifiedTypeName name="org.sqlite.SQLiteConfig"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="com.kopo.project0527.Personnel"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="java.lang.System.Logger"/>
 </qualifiedTypeNameHistroy>

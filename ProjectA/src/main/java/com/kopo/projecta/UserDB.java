@@ -141,5 +141,34 @@ public class UserDB {
 		}
 		return resultString;
 	}
+	
+	public boolean deleteData(int idx) {
+		try {
+			// open
+			Class.forName("org.sqlite.JDBC");
+			SQLiteConfig config = new SQLiteConfig();
+			Connection connection = DriverManager.getConnection("jdbc:sqlite:/" + "C:/tomcat/users.db",
+					config.toProperties());
+
+			String query = "DELETE FROM users WHERE idx=?";
+			PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+			preparedStatement.setInt(1, idx);
+			int finalResult = preparedStatement.executeUpdate();
+
+			preparedStatement.close();
+			connection.close();
+			if (finalResult == 1) {
+				return true;
+			} else {
+				return false;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	
+	}
 
 }
